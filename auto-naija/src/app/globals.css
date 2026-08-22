@@ -25,6 +25,15 @@ body {
   font-family: var(--font-work-sans), Arial, Helvetica, sans-serif;
 }
 
+.passwordSecuritySidebar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.passwordSecuritySidebar::-webkit-scrollbar {
+  display: none;
+}
+
 @media (max-width: 640px) {
   .card404 {
     min-height: auto !important;
@@ -119,5 +128,206 @@ body {
 
   .comingSoonLink {
     font-size: 13px !important;
+  }
+
+  .passwordSecurityNav {
+    display: flex !important;
+    height: 72px !important;
+    padding: 0 16px !important;
+    background-color: #1A3C6E !important;
+    justify-content: center !important;
+  }
+
+  .passwordSecurityPage {
+    padding-top: 72px !important;
+  }
+
+  .passwordSecurityNavBrand {
+    width: 100% !important;
+    font-size: 18px !important;
+    gap: 0 !important;
+    align-items: center !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    color: #FFFFFF !important;
+    text-align: center !important;
+  }
+
+  .passwordSecurityBrandText {
+    display: none !important;
+  }
+
+  .passwordSecurityMobileTitle {
+    display: block !important;
+    color: #FFFFFF !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+
+  .passwordSecurityMobileTitle div:first-child {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #FFFFFF !important;
+  }
+
+  .passwordSecurityMobileTitle div:last-child {
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    color: #FFFFFF !important;
+    margin-top: 2px !important;
+  }
+
+  .passwordSecurityNavBrand svg {
+    display: none !important;
+  }
+
+  .passwordSecurityNavLinks {
+    display: none !important;
+  }
+
+  .passwordSecurityShell {
+    flex-direction: column !important;
+  }
+
+  .passwordSecuritySidebar {
+    display: none !important;
+  }
+
+  .passwordSecurityMain {
+    margin-left: 0 !important;
+    padding: 20px 16px !important;
+  }
+
+  .passwordSecurityHeadingWrap {
+    display: none !important;
+  }
+
+  .passwordSecurityTitle {
+    font-size: 22px !important;
+    margin-bottom: 4px !important;
+    color: #FFFFFF !important;
+  }
+
+  .passwordSecuritySubtitle {
+    font-size: 13px !important;
+    margin-bottom: 0 !important;
+    color: #FFFFFF !important;
+  }
+
+  .passwordSecurityHeadingWrap .passwordSecurityTitle,
+  .passwordSecurityHeadingWrap .passwordSecuritySubtitle {
+    text-align: center !important;
+  }
+
+  .passwordSecurityStatusCard,
+  .passwordSecuritySettingsCard,
+  .passwordSecurityActivityCard,
+  .passwordSecurityDangerCard {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .passwordSecurityStatusCard,
+  .passwordSecuritySettingsCard,
+  .passwordSecurityActivityCard {
+    padding: 16px !important;
+  }
+
+  .passwordSecurityStatusCard {
+    background-color: #1A3C6E !important;
+    border-color: #1A3C6E !important;
+  }
+
+  .passwordSecurityStatusCard .passwordSecurityStatusTitle,
+  .passwordSecurityStatusCard .passwordSecurityStatusCopy,
+  .passwordSecurityStatusCard .passwordSecurityScoreRow,
+  .passwordSecurityStatusCard .passwordSecurityScoreRow div {
+    color: #FFFFFF !important;
+  }
+
+  .passwordSecurityStatusCard .passwordSecurityStatusIcon {
+    background-color: rgba(255, 255, 255, 0.16) !important;
+  }
+
+  .passwordSecurityStatusCard svg {
+    color: #FFFFFF !important;
+  }
+
+  .passwordSecurityStatusCard .passwordSecurityScoreBar {
+    background-color: #B9B2C9 !important;
+  }
+
+  .passwordSecurityStatusCard .passwordSecurityScoreBar > div {
+    background-color: #FFFFFF !important;
+  }
+
+  .passwordSecurityStatusIcon,
+  .passwordSecuritySettingIcon {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .passwordSecurityStatusTitle,
+  .passwordSecuritySettingTitle,
+  .passwordSecurityDeviceTitle,
+  .passwordSecurityDangerTitle {
+    font-size: 15px !important;
+  }
+
+  .passwordSecurityStatusCopy,
+  .passwordSecuritySettingCopy,
+  .passwordSecurityMeta,
+  .passwordSecurityDangerCopy {
+    font-size: 11px !important;
+  }
+
+  .passwordSecurityScoreRow {
+    margin-top: 14px !important;
+  }
+
+  .passwordSecurityScoreBar {
+    width: 100% !important;
+  }
+
+  .passwordSecuritySectionHeading {
+    font-size: 15px !important;
+    margin-top: 24px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .passwordSecurityAction {
+    font-size: 13px !important;
+  }
+
+  .passwordSecurityActivityRow {
+    padding: 14px 16px !important;
+  }
+
+  .passwordSecurityCurrentBadge {
+    font-size: 10px !important;
+  }
+
+  .passwordSecuritySessionsLinkWrap {
+    width: 100% !important;
+    padding-right: 0 !important;
+    margin-top: 6px !important;
+  }
+
+  .passwordSecurityDangerHeading {
+    margin-top: 24px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .passwordSecurityDangerCard {
+    padding: 12px 16px !important;
+  }
+
+  .passwordSecuritySidebar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .passwordSecuritySidebar::-webkit-scrollbar {
+    display: none;
   }
 }
