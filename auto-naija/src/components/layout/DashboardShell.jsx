@@ -15,6 +15,7 @@ import { PiBookOpenText } from 'react-icons/pi'
 import { MdOutlineAssignmentReturn } from 'react-icons/md'
 import { CiMail } from 'react-icons/ci'
 import { LuCircleHelp } from 'react-icons/lu'
+import { IoLogOutOutline } from 'react-icons/io5'
 
 const menuItems = [
   { label: 'Dashboard', icon: LuLayoutDashboard, href: '/', key: 'dashboard' },
@@ -31,6 +32,7 @@ const menuItems = [
   { label: 'Messages', icon: CiMail, href: '/', key: 'messages' },
   { label: 'Settings', icon: IoSettingsOutline, href: '/password-security', key: 'settings' },
   { label: 'Help', icon: LuCircleHelp, href: '/help-support', key: 'help' },
+  { label: 'LogOut', icon: IoLogOutOutline, href: '/logout-confirmation', key: 'logout' },
 ]
 
 export default function DashboardShell({ activeItem, children }) {
@@ -142,12 +144,12 @@ export default function DashboardShell({ activeItem, children }) {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '18px',
+              fontSize: '20px',
               fontWeight: 700,
               flexShrink: 0,
             }}
           >
-            <IoCarOutline size={24} />
+            A
           </div>
           <div>
             <div
