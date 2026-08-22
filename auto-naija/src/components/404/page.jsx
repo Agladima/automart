@@ -92,7 +92,7 @@ const page = props => {
           temporarily out of stock in our digital garage.
         </div>
         <Link
-          href="/"
+          href="/password-security"
           className="homeButton404"
           style={{
             marginTop: '12px',

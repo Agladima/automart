@@ -1,4 +1,7 @@
+"use client"
+
 import React from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { MdAnalytics } from "react-icons/md"
@@ -7,6 +10,31 @@ import { GrFormPreviousLink } from "react-icons/gr"
 import comingSoonBg from '../../assets/images/coming soon bg.png'
 
 const Page = () => {
+  const [email, setEmail] = useState('')
+  const [notice, setNotice] = useState('')
+
+  useEffect(() => {
+    if (!notice) return undefined
+
+    const timeoutId = setTimeout(() => {
+      setNotice('')
+    }, 3000)
+
+    return () => clearTimeout(timeoutId)
+  }, [notice])
+
+  const handleNotify = () => {
+    const trimmedEmail = email.trim()
+
+    if (!trimmedEmail) {
+      setNotice('Please enter your email address first.')
+      return
+    }
+
+    setNotice('We will keep you updated soon.')
+    setEmail('')
+  }
+
   return (
     <div
       className="comingSoonPage"
@@ -161,6 +189,8 @@ const Page = () => {
             <input
               type="email"
               placeholder="Enter your business email"
+              value={email}
+              onChange={event => setEmail(event.target.value)}
               className="comingSoonInput"
               style={{
                 width: '382px',
@@ -180,6 +210,7 @@ const Page = () => {
           <button
             type="button"
             className="comingSoonButton"
+            onClick={handleNotify}
             style={{
               marginTop: '4px',
               backgroundColor: '#1A3C6E',
@@ -200,6 +231,22 @@ const Page = () => {
             <span>Notify Me</span>
             <BiSolidBellRing />
           </button>
+          {notice ? (
+            <div
+              style={{
+                width: '382px',
+                marginTop: '4px',
+                padding: '10px 12px',
+                borderRadius: '8px',
+                backgroundColor: '#EAF4EE',
+                color: '#1E6B3A',
+                fontSize: '13px',
+                fontWeight: 500,
+              }}
+            >
+              {notice}
+            </div>
+          ) : null}
         </div>
         <Link
           href="/404"
