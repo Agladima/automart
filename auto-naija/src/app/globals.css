@@ -34,6 +34,63 @@ body {
   display: none;
 }
 
+.passwordSecurityMobileSettingRow,
+.passwordSecurityMobileSettingDivider,
+.mobileBottomNav {
+  display: none;
+}
+
+.helpSupportMobileBreak {
+  display: none;
+}
+
+.helpSupportContactBreak {
+  display: none;
+}
+
+.comingSoonMobileCopy,
+.comingSoonMobileCardCopy {
+  display: none;
+}
+
+.body404 span {
+  display: block;
+}
+
+.mobileNavBack {
+  display: none;
+}
+
+.logoutConfirmationMobileCopy {
+  display: none;
+}
+
+.helpSupportQuickHelpItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.helpSupportQuickHelpTitle {
+  color: #1B1A25;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.helpSupportQuickHelpCopy {
+  color: #61646B;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.helpSupportQuickHelpDivider {
+  height: 1px;
+  margin: 16px 0;
+  background-color: #E5E0EF;
+}
+
 @media (max-width: 640px) {
   .card404 {
     min-height: auto !important;
@@ -55,7 +112,12 @@ body {
   }
 
   .body404 {
-    font-size: 15px !important;
+    font-size: 14px !important;
+  }
+
+  .body404 span {
+    display: block;
+    white-space: nowrap;
   }
 
   .homeButton404 {
@@ -88,6 +150,24 @@ body {
   .comingSoonCopy {
     font-size: 14px !important;
     max-width: 100% !important;
+  }
+
+  .comingSoonDesktopCopy,
+  .comingSoonDesktopCardCopy {
+    display: none;
+  }
+
+  .comingSoonMobileCopy,
+  .comingSoonMobileCardCopy {
+    display: block;
+  }
+
+  .comingSoonMobileCopy > div {
+    white-space: nowrap;
+  }
+
+  .comingSoonMobileCardCopy {
+    white-space: nowrap;
   }
 
   .comingSoonCard {
@@ -130,6 +210,126 @@ body {
     font-size: 13px !important;
   }
 
+  .logoutConfirmationOverlay {
+    padding: 12px !important;
+    align-items: flex-start !important;
+    padding-top: 84px !important;
+    background-color: #FFFFFF !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .logoutConfirmationCard {
+    width: 100% !important;
+    max-width: 448px !important;
+    height: auto !important;
+    max-height: none !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+  }
+
+  .logoutConfirmationHeader {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    z-index: 60 !important;
+    width: 100vw !important;
+    height: auto !important;
+    min-height: 56px !important;
+    margin-bottom: 12px !important;
+    border-radius: 0 !important;
+    background-color: #1A3C6E !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  .logoutConfirmationHeader div {
+    width: auto !important;
+  }
+
+  .logoutConfirmationHeader > div > div:first-child {
+    font-size: 18px !important;
+  }
+
+  .logoutConfirmationHeader > div > div:last-child {
+    font-size: 13px !important;
+  }
+
+  .logoutConfirmationBack {
+    left: 12px !important;
+  }
+
+  .logoutConfirmationBody {
+    height: 550px !important;
+    flex: none !important;
+    background-color: #FFFFFF !important;
+    border: 1px solid #C8C4D9 !important;
+    border-radius: 12px !important;
+    padding: 20px 16px 16px !important;
+  }
+
+  .logoutConfirmationIcon {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .logoutConfirmationTitle {
+    font-size: 24px !important;
+    margin-top: 14px !important;
+  }
+
+  .logoutConfirmationSubtitle {
+    font-size: 14px !important;
+    margin-top: 10px !important;
+  }
+
+  .logoutConfirmationDesktopCopy {
+    display: none;
+  }
+
+  .logoutConfirmationMobileCopy {
+    display: inline;
+  }
+
+  .logoutConfirmationWarning {
+    width: 100% !important;
+    margin-top: 18px !important;
+    padding: 12px 14px !important;
+  }
+
+  .logoutConfirmationWarningTitle {
+    font-size: 15px !important;
+  }
+
+  .logoutConfirmationWarningTitle > div {
+    font-size: 15px !important;
+  }
+
+  .logoutConfirmationWarningText {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+  }
+
+  .logoutConfirmationButtons {
+    margin-top: 18px !important;
+    gap: 10px !important;
+  }
+
+  .logoutConfirmationPrimary,
+  .logoutConfirmationSecondary {
+    width: 100% !important;
+    max-width: 384px !important;
+    height: 44px !important;
+    font-size: 16px !important;
+  }
+
+  .logoutConfirmationFooter {
+    margin-top: 14px !important;
+    font-size: 12px !important;
+  }
+
   .passwordSecurityNav {
     display: flex !important;
     height: 72px !important;
@@ -170,6 +370,88 @@ body {
     color: #FFFFFF !important;
   }
 
+  .helpSupportHero {
+    min-height: 240px !important;
+    height: 240px !important;
+    padding: 20px 16px !important;
+    justify-content: center !important;
+    position: fixed !important;
+  }
+
+  .mobileNavBack {
+    position: absolute;
+    left: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+
+  .helpSupportHeroTitle {
+    font-size: 24px !important;
+    white-space: nowrap;
+  }
+
+  .helpSupportHeroCopy {
+    max-width: 290px;
+    font-size: 14px !important;
+    line-height: 1.35 !important;
+  }
+
+  .helpSupportMobileBreak {
+    display: inline;
+  }
+
+  .helpSupportSearch {
+    width: 100% !important;
+    height: 48px !important;
+    margin-top: 18px !important;
+    padding-left: 16px !important;
+  }
+
+  .helpSupportSearchButton {
+    display: none !important;
+  }
+
+  .helpSupportContactGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  .helpSupportSectionHeading {
+    font-size: 16px !important;
+  }
+
+  .helpSupportContactGrid article {
+    min-width: 0;
+    overflow: hidden;
+    padding: 12px !important;
+    gap: 8px !important;
+  }
+
+  .helpSupportContactGrid article > div:first-child {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .helpSupportContactGrid article > div {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .helpSupportContactBreak {
+    display: inline;
+  }
+
+  .passwordSecurityMobileTitle.helpSupportMobileTitle > .helpSupportMobileTitleText {
+    font-size: 28px !important;
+    font-weight: 700 !important;
+  }
+
   .passwordSecurityMobileTitle div:last-child {
     font-size: 11px !important;
     font-weight: 400 !important;
@@ -195,7 +477,7 @@ body {
 
   .passwordSecurityMain {
     margin-left: 0 !important;
-    padding: 20px 16px !important;
+    padding: 20px 16px 104px !important;
   }
 
   .passwordSecurityHeadingWrap {
@@ -231,6 +513,10 @@ body {
   .passwordSecuritySettingsCard,
   .passwordSecurityActivityCard {
     padding: 16px !important;
+  }
+
+  .passwordSecuritySettingsCard {
+    padding: 0 !important;
   }
 
   .passwordSecurityStatusCard {
@@ -299,12 +585,180 @@ body {
     font-size: 13px !important;
   }
 
+  .passwordSecuritySettingsCard > .passwordSecuritySettingRow > div:first-child {
+    min-width: 0;
+    max-width: calc(100% - 56px);
+  }
+
+  .passwordSecuritySettingsCard > .passwordSecuritySettingRow {
+    padding: 14px 16px !important;
+    gap: 12px;
+  }
+
+  .passwordSecuritySettingsCard > .passwordSecuritySettingRow > div:first-child > div:last-child {
+    min-width: 0;
+  }
+
+  .passwordSecuritySettingsCard > .passwordSecuritySettingRow .passwordSecurityAction {
+    flex-shrink: 0;
+  }
+
+  .passwordSecuritySettingsCard > .passwordSecuritySettingRow .passwordSecuritySettingTitle {
+    white-space: nowrap;
+  }
+
+  .passwordSecurityMobileSettingRow {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .passwordSecurityMobileSettingInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .passwordSecurityMobileSettingInfo .passwordSecuritySettingIcon {
+    border-radius: 50%;
+    background-color: #EAF4FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .passwordSecurityMobileSettingInfo .passwordSecuritySettingTitle {
+    color: #1B1A25;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .passwordSecurityMobileSettingInfo .passwordSecuritySettingCopy {
+    color: #474556;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-top: 4px;
+  }
+
+  .passwordSecurityMobileSettingRow .passwordSecuritySettingTitle {
+    white-space: nowrap;
+  }
+
+  .passwordSecurityMobileSettingRow .passwordSecuritySettingCopy {
+    white-space: nowrap;
+  }
+
+  .passwordSecurityMobileSettingDivider {
+    display: block !important;
+    height: 1px;
+    margin: 0 16px;
+    background-color: #E5E0EF;
+  }
+
+  .passwordSecurityToggle {
+    border: none;
+    width: 38px;
+    height: 22px;
+    padding: 3px;
+    border-radius: 999px;
+    background-color: #C8C4D9;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: background-color 160ms ease;
+  }
+
+  .passwordSecurityToggle span {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    transition: transform 160ms ease;
+  }
+
+  .passwordSecurityToggle.is-enabled {
+    background-color: #1A3C6E;
+  }
+
+  .passwordSecurityToggle.is-enabled span {
+    transform: translateX(16px);
+  }
+
+  .passwordSecurityMobileAction {
+    color: #1A3C6E !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    cursor: pointer;
+  }
+
   .passwordSecurityActivityRow {
     padding: 14px 16px !important;
+    position: relative;
+  }
+
+  .passwordSecurityActivityRow:first-child .passwordSecurityCurrentBadge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  .passwordSecurityActivityRow:first-child > div:first-child {
+    padding-right: 56px;
   }
 
   .passwordSecurityCurrentBadge {
     font-size: 10px !important;
+  }
+
+  .passwordSecuritySessionsLinkWrap {
+    display: none !important;
+  }
+
+  .mobileBottomNav {
+    display: flex !important;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    height: 80px;
+    align-items: center;
+    justify-content: space-around;
+    gap: 4px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    background-color: #FCF8FF;
+    border: 1px solid #C8C4D9;
+    overflow: hidden;
+  }
+
+  .mobileBottomNavItem {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    height: 64px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    border-radius: 8px;
+    color: #474556;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .mobileBottomNavItem.is-active {
+    padding: 4px 8px;
+    background-color: #1A3C6E;
+    color: #FFFFFF;
   }
 
   .passwordSecuritySessionsLinkWrap {

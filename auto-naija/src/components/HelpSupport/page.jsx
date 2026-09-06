@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import DashboardShell from '../layout/DashboardShell'
 import { IoIosHelpCircle } from 'react-icons/io'
@@ -11,7 +13,11 @@ import { IoMdTime } from 'react-icons/io'
 
 const page = () => {
   return (
-    <DashboardShell activeItem="help">
+    <DashboardShell
+      activeItem="help"
+      mobileTitle="Help & Support"
+      mobileSubtitle=""
+    >
       <div
         style={{
           width: '100%',
@@ -23,6 +29,7 @@ const page = () => {
         }}
       >
         <section
+          className="helpSupportHero"
           style={{
             width: '880px',
             maxWidth: '100%',
@@ -41,6 +48,7 @@ const page = () => {
           <IoIosHelpCircle size={30} color="#FFFFFF" />
 
           <div
+            className="helpSupportHeroTitle"
             style={{
               marginTop: '18px',
               color: '#FFFFFF',
@@ -53,6 +61,7 @@ const page = () => {
           </div>
 
           <div
+            className="helpSupportHeroCopy"
             style={{
               marginTop: '10px',
               color: '#E4DFFF',
@@ -61,10 +70,12 @@ const page = () => {
               lineHeight: 1.4,
             }}
           >
-            Get quick answers or contact out support team
+            Get quick answers or contact our<span className="helpSupportMobileBreak"><br /></span> support team
           </div>
 
-          <div
+          <form
+            className="helpSupportSearch"
+            onSubmit={(event) => event.preventDefault()}
             style={{
               marginTop: '28px',
               width: '512px',
@@ -97,6 +108,7 @@ const page = () => {
               }}
             />
             <button
+              className="helpSupportSearchButton"
               type="button"
               style={{
                 width: '95px',
@@ -113,7 +125,7 @@ const page = () => {
             >
               Search
             </button>
-          </div>
+          </form>
         </section>
 
         <div
@@ -124,6 +136,7 @@ const page = () => {
           }}
         >
           <div
+            className="helpSupportSectionHeading"
             style={{
               color: '#1B1A25',
               fontSize: '28px',
@@ -136,6 +149,7 @@ const page = () => {
           </div>
 
           <div
+            className="helpSupportContactGrid"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
@@ -188,7 +202,7 @@ const page = () => {
                   lineHeight: 1.4,
                 }}
               >
-                Chat with our support team instantly
+                Chat with our support<span className="helpSupportContactBreak"><br /></span> team.
               </div>
             </article>
 
@@ -288,7 +302,7 @@ const page = () => {
                   lineHeight: 1.4,
                 }}
               >
-                support@auto-naija-mart.com
+                support@shop.com
               </div>
             </article>
           </div>
@@ -302,6 +316,7 @@ const page = () => {
           }}
         >
           <div
+            className="helpSupportSectionHeading"
             style={{
               color: '#1B1A25',
               fontSize: '28px',
@@ -378,6 +393,7 @@ const page = () => {
           }}
         >
           <div
+            className="helpSupportSectionHeading"
             style={{
               color: '#1B1A25',
               fontSize: '28px',
@@ -390,105 +406,30 @@ const page = () => {
           </div>
 
           <div
+            className="helpSupportQuickHelpCard"
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
-              gap: '24px',
+              width: '100%',
+              minHeight: '118px',
+              backgroundColor: '#FFFFFF',
+              border: '1px solid #C8C4D9',
+              borderRadius: '12px',
+              padding: '20px',
+              boxSizing: 'border-box',
             }}
           >
-            <article
-              style={{
-                height: '118px',
-                width: '100%',
-                backgroundColor: '#FFFFFF',
-                border: '1px solid #C8C4D9',
-                borderRadius: '12px',
-                padding: '20px',
-                boxSizing: 'border-box',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '8px',
-              }}
-            >
-              <div
-                style={{
-                  color: '#1B1A25',
-                  fontSize: '16px',
-                  fontWeight: 600,
-                  lineHeight: 1.2,
-                }}
-              >
-                Report a problem
-              </div>
-              <div
-                style={{
-                  color: '#61646B',
-                  fontSize: '12px',
-                  fontWeight: 400,
-                  lineHeight: 1.4,
-                }}
-              >
+            <div className="helpSupportQuickHelpItem">
+              <div className="helpSupportQuickHelpTitle">Report a problem</div>
+              <div className="helpSupportQuickHelpCopy">
                 Having an issue with a transaction or the platform? Let us know.
               </div>
-              <div
-                style={{
-                  color: '#2700A6',
-                  fontSize: '14px',
-                  fontWeight: 500,
-                  lineHeight: 1.2,
-                  marginTop: 'auto',
-                }}
-              >
-                Report Issue
-              </div>
-            </article>
-
-            <article
-              style={{
-                height: '118px',
-                width: '100%',
-                backgroundColor: '#FFFFFF',
-                border: '1px solid #C8C4D9',
-                borderRadius: '12px',
-                padding: '20px',
-                boxSizing: 'border-box',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '8px',
-              }}
-            >
-              <div
-                style={{
-                  color: '#1B1A25',
-                  fontSize: '16px',
-                  fontWeight: 600,
-                  lineHeight: 1.2,
-                }}
-              >
-                Suggest a feature
-              </div>
-              <div
-                style={{
-                  color: '#61646B',
-                  fontSize: '12px',
-                  fontWeight: 400,
-                  lineHeight: 1.4,
-                }}
-              >
+            </div>
+            <div className="helpSupportQuickHelpDivider" />
+            <div className="helpSupportQuickHelpItem">
+              <div className="helpSupportQuickHelpTitle">Suggest a feature</div>
+              <div className="helpSupportQuickHelpCopy">
                 Share your ideas to improve the AutoPart app.
               </div>
-              <div
-                style={{
-                  color: '#2700A6',
-                  fontSize: '14px',
-                  fontWeight: 500,
-                  lineHeight: 1.2,
-                  marginTop: 'auto',
-                }}
-              >
-                Submit Idea
-              </div>
-            </article>
+            </div>
           </div>
         </div>
 

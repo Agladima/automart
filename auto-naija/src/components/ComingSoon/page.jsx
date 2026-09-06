@@ -125,8 +125,16 @@ const Page = () => {
             maxWidth: '720px',
           }}
         >
-          <div>We are engineering a powerful new suite of tools to give you deep insights into your</div>
-          <div>wholesale automotive inventory and escrow transactions.</div>
+          <div className="comingSoonDesktopCopy">
+            <div>We are engineering a powerful new suite of tools to give you deep insights into your</div>
+            <div>wholesale automotive inventory and escrow transactions.</div>
+          </div>
+          <div className="comingSoonMobileCopy">
+            <div>We are engineering a powerful new suite of</div>
+            <div>tools to give you deep insights into your</div>
+            <div>wholesale automotive inventory and escrow</div>
+            <div>transactions</div>
+          </div>
         </div>
         <div
           className="comingSoonCard"
@@ -164,9 +172,16 @@ const Page = () => {
               lineHeight: '1.5',
             }}
           >
-            Be the first to know when Wholesale Analytics goes
-            <br />
-            live.
+            <span className="comingSoonDesktopCardCopy">
+              Be the first to know when Wholesale Analytics goes
+              <br />
+              live.
+            </span>
+            <span className="comingSoonMobileCardCopy">
+              <span>Be the first to know when Wholesale Analytics goes</span>
+              <br />
+              <span>live</span>
+            </span>
           </div>
           <div className="comingSoonFieldWrap" style={{ position: 'relative', width: '382px', marginTop: '6px' }}>
             <div

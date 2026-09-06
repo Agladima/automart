@@ -6,11 +6,12 @@ import { IoMdArrowBack } from 'react-icons/io'
 import { RxExit } from 'react-icons/rx'
 import { PiInfoFill } from 'react-icons/pi'
 
-const page = () => {
+const LogoutConfirmation = () => {
   const router = useRouter()
 
   return (
     <div
+      className="logoutConfirmationOverlay"
       style={{
         minHeight: '100vh',
         display: 'flex',
@@ -24,6 +25,7 @@ const page = () => {
       }}
     >
       <div
+        className="logoutConfirmationCard"
         style={{
           width: '448px',
           maxWidth: '100%',
@@ -38,6 +40,7 @@ const page = () => {
         }}
       >
         <div
+          className="logoutConfirmationHeader"
           style={{
             height: '56px',
             backgroundColor: '#2700A6',
@@ -52,6 +55,7 @@ const page = () => {
         >
           <button
             type="button"
+            className="logoutConfirmationBack"
             onClick={() => router.back()}
             aria-label="Go back"
             style={{
@@ -95,6 +99,7 @@ const page = () => {
         </div>
 
         <div
+          className="logoutConfirmationBody"
           style={{
             flex: 1,
             display: 'flex',
@@ -106,6 +111,7 @@ const page = () => {
           }}
         >
           <div
+            className="logoutConfirmationIcon"
             style={{
               width: '48px',
               height: '48px',
@@ -122,6 +128,7 @@ const page = () => {
           </div>
 
           <div
+            className="logoutConfirmationTitle"
             style={{
               marginTop: '18px',
               textAlign: 'center',
@@ -137,6 +144,7 @@ const page = () => {
           </div>
 
           <div
+            className="logoutConfirmationSubtitle"
             style={{
               marginTop: '12px',
               textAlign: 'center',
@@ -146,12 +154,22 @@ const page = () => {
               lineHeight: 1.5,
             }}
           >
-            You&apos;ll need to log in again to access your account,
-            <br />
-            track orders, and chat with sellers.
+            <span className="logoutConfirmationDesktopCopy">
+              You&apos;ll need to log in again to access your account,
+              <br />
+              track orders, and chat with sellers.
+            </span>
+            <span className="logoutConfirmationMobileCopy">
+              You&apos;ll need to log in again to access
+              <br />
+              your account, track orders, and chat
+              <br />
+              with sellers.
+            </span>
           </div>
 
           <div
+            className="logoutConfirmationWarning"
             style={{
               width: '384px',
               maxWidth: '100%',
@@ -163,6 +181,7 @@ const page = () => {
             }}
           >
             <div
+              className="logoutConfirmationWarningTitle"
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -183,6 +202,7 @@ const page = () => {
             </div>
 
             <div
+              className="logoutConfirmationWarningText"
               style={{
                 marginTop: '8px',
                 color: '#61646B',
@@ -200,6 +220,7 @@ const page = () => {
           </div>
 
           <div
+            className="logoutConfirmationButtons"
             style={{
               width: '100%',
               marginTop: '22px',
@@ -211,6 +232,7 @@ const page = () => {
           >
             <button
               type="button"
+              className="logoutConfirmationPrimary"
               style={{
                 width: '384px',
                 maxWidth: '100%',
@@ -229,6 +251,7 @@ const page = () => {
 
             <button
               type="button"
+              className="logoutConfirmationSecondary"
               style={{
                 width: '384px',
                 maxWidth: '100%',
@@ -247,6 +270,7 @@ const page = () => {
           </div>
 
           <div
+            className="logoutConfirmationFooter"
             style={{
               marginTop: '16px',
               color: '#61646B',
@@ -264,4 +288,4 @@ const page = () => {
   )
 }
 
-export default page
+export default LogoutConfirmation

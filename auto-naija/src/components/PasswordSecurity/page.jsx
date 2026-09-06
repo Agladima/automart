@@ -1,12 +1,18 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import DashboardShell from '../layout/DashboardShell'
 import { GoShieldLock } from "react-icons/go"
 import { BsKey } from "react-icons/bs"
 import { IoPhonePortraitOutline } from "react-icons/io5"
+import { IoFingerPrintSharp } from "react-icons/io5"
+import { RxCountdownTimer } from "react-icons/rx"
 import { IoLogOutOutline } from "react-icons/io5"
 import { IoIosArrowForward } from "react-icons/io"
 
-const page = () => {
+const PasswordSecurity = () => {
+  const [biometricEnabled, setBiometricEnabled] = useState(false)
+
   return (
     <DashboardShell activeItem="settings">
       <div className="passwordSecurityHeadingWrap">
@@ -294,6 +300,39 @@ const page = () => {
             Set-up
           </div>
         </div>
+        <div className="passwordSecurityMobileSettingRow">
+          <div className="passwordSecurityMobileSettingInfo">
+            <div className="passwordSecuritySettingIcon">
+              <IoFingerPrintSharp size={20} color="#1A3C6E" />
+            </div>
+            <div>
+              <div className="passwordSecuritySettingTitle">Biometric Login</div>
+              <div className="passwordSecuritySettingCopy">Use fingerprint or face ID</div>
+            </div>
+          </div>
+          <button
+            type="button"
+            className={`passwordSecurityToggle${biometricEnabled ? ' is-enabled' : ''}`}
+            onClick={() => setBiometricEnabled((enabled) => !enabled)}
+            aria-label="Toggle Biometric Login"
+            aria-pressed={biometricEnabled}
+          >
+            <span />
+          </button>
+        </div>
+        <div className="passwordSecurityMobileSettingDivider" />
+        <div className="passwordSecurityMobileSettingRow">
+          <div className="passwordSecurityMobileSettingInfo">
+            <div className="passwordSecuritySettingIcon">
+              <RxCountdownTimer size={20} color="#1A3C6E" />
+            </div>
+            <div>
+              <div className="passwordSecuritySettingTitle">Active Sessions</div>
+              <div className="passwordSecuritySettingCopy">Manage your logged-in devices</div>
+            </div>
+          </div>
+          <div className="passwordSecurityAction passwordSecurityMobileAction">View</div>
+        </div>
       </div>
 
       <div
@@ -534,4 +573,4 @@ const page = () => {
   )
 }
 
-export default page
+export default PasswordSecurity

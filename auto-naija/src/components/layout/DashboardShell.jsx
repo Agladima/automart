@@ -1,6 +1,10 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { IoCarOutline } from 'react-icons/io5'
+import { IoMdArrowBack } from 'react-icons/io'
 import { LuLayoutDashboard } from 'react-icons/lu'
 import { MdOutlineInventory2 } from 'react-icons/md'
 import { MdOutlineShoppingCart } from 'react-icons/md'
@@ -16,6 +20,10 @@ import { MdOutlineAssignmentReturn } from 'react-icons/md'
 import { CiMail } from 'react-icons/ci'
 import { LuCircleHelp } from 'react-icons/lu'
 import { IoLogOutOutline } from 'react-icons/io5'
+import { MdHomeFilled } from 'react-icons/md'
+import { IoMdSearch } from 'react-icons/io'
+import { MdOutlineMessage } from 'react-icons/md'
+import { CgProfile } from 'react-icons/cg'
 
 const menuItems = [
   { label: 'Dashboard', icon: LuLayoutDashboard, href: '/', key: 'dashboard' },
@@ -35,7 +43,14 @@ const menuItems = [
   { label: 'LogOut', icon: IoLogOutOutline, href: '/logout-confirmation', key: 'logout' },
 ]
 
-export default function DashboardShell({ activeItem, children }) {
+export default function DashboardShell({
+  activeItem,
+  children,
+  mobileTitle = 'Password & Security',
+  mobileSubtitle = 'Keep your account secure and manage your login methods.',
+}) {
+  const router = useRouter()
+
   return (
     <div
       className="passwordSecurityPage dashboardShell"
@@ -62,6 +77,14 @@ export default function DashboardShell({ activeItem, children }) {
           zIndex: 50,
         }}
       >
+        <button
+          type="button"
+          className="mobileNavBack"
+          onClick={() => router.back()}
+          aria-label="Go back"
+        >
+          <IoMdArrowBack size={20} />
+        </button>
         <div
           className="passwordSecurityNavBrand"
           style={{
@@ -83,13 +106,15 @@ export default function DashboardShell({ activeItem, children }) {
             Auto-Naija Mart
           </div>
           <div
-            className="passwordSecurityMobileTitle"
+            className={`passwordSecurityMobileTitle${activeItem === 'help' ? ' helpSupportMobileTitle' : ''}`}
             style={{
               display: 'none',
             }}
           >
-            <div>Password &amp; Security</div>
-            <div>Keep your account secure and manage your login methods.</div>
+            <div className={activeItem === 'help' ? 'helpSupportMobileTitleText' : undefined}>
+              {mobileTitle}
+            </div>
+            {mobileSubtitle && <div>{mobileSubtitle}</div>}
           </div>
         </div>
 
@@ -216,6 +241,31 @@ export default function DashboardShell({ activeItem, children }) {
       >
         {children}
       </main>
+
+      <nav className="mobileBottomNav" aria-label="Mobile navigation">
+        {[
+          { label: 'Home', icon: MdHomeFilled, href: '/', key: 'dashboard' },
+          { label: 'Search', icon: IoMdSearch, href: '/', key: 'search' },
+          { label: 'Chat', icon: MdOutlineMessage, href: '/', key: 'chat' },
+          { label: 'Order', icon: MdOutlineShoppingCart, href: '/', key: 'orders' },
+          { label: 'Profile', icon: CgProfile, href: '/password-security', key: 'profile' },
+        ].map(({ label, icon: Icon, href, key }) => {
+          const isActive = key === 'profile'
+            ? activeItem === 'profile' || activeItem === 'settings' || activeItem === 'help'
+            : activeItem === key
+
+          return (
+            <Link
+              key={label}
+              href={href}
+              className={`mobileBottomNavItem${isActive ? ' is-active' : ''}`}
+            >
+              <Icon size={16} />
+              <span>{label}</span>
+            </Link>
+          )
+        })}
+      </nav>
     </div>
   )
 }
