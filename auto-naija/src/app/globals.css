@@ -40,6 +40,11 @@ body {
   display: none;
 }
 
+.mobileMenuTrigger,
+.logoutConfirmationMenuTrigger {
+  display: none;
+}
+
 .helpSupportMobileBreak {
   display: none;
 }
@@ -358,16 +363,37 @@ body {
   }
 
   .passwordSecurityMobileTitle {
+    position: absolute !important;
+    left: 50% !important;
+    width: max-content !important;
     display: block !important;
     color: #FFFFFF !important;
     line-height: 1.2 !important;
     text-align: center !important;
+    transform: translateX(-50%);
   }
 
   .passwordSecurityMobileTitle div:first-child {
-    font-size: 18px !important;
+    font-size: 28px !important;
     font-weight: 700 !important;
     color: #FFFFFF !important;
+  }
+
+  .passwordSecurityMobileTitle > .passwordSecurityMobileTitleText {
+    display: block !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    white-space: nowrap;
+  }
+
+  .passwordSecurityMobileTitle > .passwordOnlyMobileTitleText {
+    display: block !important;
+    font-size: 36px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    transform: scale(1.5);
+    transform-origin: center;
   }
 
   .helpSupportHero {
@@ -375,7 +401,6 @@ body {
     height: 240px !important;
     padding: 20px 16px !important;
     justify-content: center !important;
-    position: fixed !important;
   }
 
   .mobileNavBack {
@@ -389,6 +414,109 @@ body {
     background: transparent;
     color: #FFFFFF;
     cursor: pointer;
+  }
+
+  .mobileMenuTrigger,
+  .logoutConfirmationMenuTrigger {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #FFFFFF;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .logoutConfirmationMenuTrigger {
+    z-index: 1;
+  }
+
+  .mobileMenuBackdrop {
+    position: fixed;
+    inset: 72px 0 0;
+    z-index: 68;
+    padding: 0;
+    border: none;
+    background-color: rgba(27, 26, 37, 0.22);
+    cursor: pointer;
+  }
+
+  .mobileMenuPanel {
+    position: fixed;
+    top: 72px;
+    right: 0;
+    bottom: 0;
+    z-index: 69;
+    width: min(280px, 86vw);
+    padding: 20px 16px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background-color: #F0ECFB;
+    box-shadow: -6px 0 20px rgba(27, 26, 37, 0.12);
+  }
+
+  .mobileMenuUser {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #C8C4D9;
+  }
+
+  .mobileMenuAvatar {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #3A00E5;
+    color: #1A3C6E;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .mobileMenuUserName {
+    color: #1B1A25;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .mobileMenuUserSubtitle {
+    margin-top: 3px;
+    color: #474556;
+    font-size: 11px;
+    font-weight: 400;
+  }
+
+  .mobileMenuItems {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 16px;
+  }
+
+  .mobileMenuItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: #474556;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .mobileMenuItem.is-active {
+    background-color: #3A00E5;
+    color: #B5AFFF;
   }
 
   .helpSupportHeroTitle {

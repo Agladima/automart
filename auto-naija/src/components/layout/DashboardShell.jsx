@@ -1,10 +1,12 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { IoCarOutline } from 'react-icons/io5'
 import { IoMdArrowBack } from 'react-icons/io'
+import { HiDotsVertical } from 'react-icons/hi'
+import MobileMenu from './MobileMenu'
 import { LuLayoutDashboard } from 'react-icons/lu'
 import { MdOutlineInventory2 } from 'react-icons/md'
 import { MdOutlineShoppingCart } from 'react-icons/md'
@@ -47,9 +49,10 @@ export default function DashboardShell({
   activeItem,
   children,
   mobileTitle = 'Password & Security',
-  mobileSubtitle = 'Keep your account secure and manage your login methods.',
+  mobileSubtitle = '',
 }) {
   const router = useRouter()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <div
@@ -85,6 +88,14 @@ export default function DashboardShell({
         >
           <IoMdArrowBack size={20} />
         </button>
+        <button
+          type="button"
+          className="mobileMenuTrigger"
+          onClick={() => setMobileMenuOpen(true)}
+          aria-label="Open menu"
+        >
+          <HiDotsVertical size={22} />
+        </button>
         <div
           className="passwordSecurityNavBrand"
           style={{
@@ -105,17 +116,24 @@ export default function DashboardShell({
           >
             Auto-Naija Mart
           </div>
+        </div>
+
+        <div
+          className={`passwordSecurityMobileTitle${activeItem === 'help' ? ' helpSupportMobileTitle' : ''}`}
+          style={{ display: 'none' }}
+        >
           <div
-            className={`passwordSecurityMobileTitle${activeItem === 'help' ? ' helpSupportMobileTitle' : ''}`}
+            className={`passwordSecurityMobileTitleText${activeItem === 'help' ? ' helpSupportMobileTitleText' : ' passwordOnlyMobileTitleText'}`}
             style={{
-              display: 'none',
+              fontSize: activeItem === 'help' ? '28px' : '36px',
+              fontWeight: 700,
+              lineHeight: 1,
+              whiteSpace: 'nowrap',
             }}
           >
-            <div className={activeItem === 'help' ? 'helpSupportMobileTitleText' : undefined}>
-              {mobileTitle}
-            </div>
-            {mobileSubtitle && <div>{mobileSubtitle}</div>}
+            {mobileTitle}
           </div>
+          {mobileSubtitle && <div>{mobileSubtitle}</div>}
         </div>
 
         <div
@@ -136,6 +154,10 @@ export default function DashboardShell({
           <span>Profile</span>
         </div>
       </header>
+
+      {mobileMenuOpen ? (
+        <MobileMenu activeItem={activeItem} onClose={() => setMobileMenuOpen(false)} />
+      ) : null}
 
       <aside
         className="passwordSecuritySidebar dashboardSidebar"

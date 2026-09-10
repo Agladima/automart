@@ -1,13 +1,16 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { IoMdArrowBack } from 'react-icons/io'
+import { HiDotsVertical } from 'react-icons/hi'
 import { RxExit } from 'react-icons/rx'
 import { PiInfoFill } from 'react-icons/pi'
+import MobileMenu from '../layout/MobileMenu'
 
 const LogoutConfirmation = () => {
   const router = useRouter()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <div
@@ -72,6 +75,14 @@ const LogoutConfirmation = () => {
             }}
           >
             <IoMdArrowBack size={20} />
+          </button>
+          <button
+            type="button"
+            className="logoutConfirmationMenuTrigger"
+            onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open menu"
+          >
+            <HiDotsVertical size={22} />
           </button>
           <div style={{ textAlign: 'center' }}>
             <div
@@ -284,6 +295,9 @@ const LogoutConfirmation = () => {
           </div>
         </div>
       </div>
+      {mobileMenuOpen ? (
+        <MobileMenu activeItem="logout" onClose={() => setMobileMenuOpen(false)} />
+      ) : null}
     </div>
   )
 }
